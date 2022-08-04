@@ -1,0 +1,132 @@
+.primary__header {
+  background: rgb(255, 255, 255);
+  width: 100%;
+  padding: 1em 2em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  opacity: 95%;
+  z-index: 200;
+}
+
+.mobile__nav__toggle,
+.mobile__nav__toggle__close {
+  display: none;
+}
+
+.header__title {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  text-transform: uppercase;
+
+  h1 {
+    font-size: 0.8em;
+    color: black;
+  }
+}
+
+.header__logo {
+  width: 30px;
+  border-radius: 50%;
+}
+
+.primary__navigation {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 0.5em;
+
+  a {
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+
+    &:hover {
+      color: grey;
+      text-decoration: underline;
+    }
+  }
+}
+
+.login__btn {
+  background: var(--primaryColor);
+  border: 0;
+  border-radius: 1em;
+  padding: 0.5em;
+  width: 50%;
+  color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &:hover {
+    background: rgb(1, 77, 164);
+  }
+}
+
+@media (max-width: 35em) {
+  .primary__navigation {
+    gap: 2em;
+    position: fixed;
+    z-index: 1000;
+    inset: 0 0 0 0%;
+    flex-direction: column;
+    padding: min(30vh, 5rem) 2em;
+    background: rgba(129, 153, 164, 0.999);
+    transform: translateX(100%);
+    transition: transform 350ms ease-out;
+
+    a {
+      color: black;
+    }
+
+    &[data-visible="true"] {
+      transform: translateX(0%);
+    }
+  }
+
+  .mobile__nav__toggle {
+    display: block;
+    position: absolute;
+    z-index: 9999;
+    top: 1rem;
+    right: 1rem;
+  }
+
+  .mobile__nav__toggle__close {
+    display: none;
+  }
+}
+
+@media (min-width: 40em) {
+  .header__title {
+    gap: 1.5em;
+
+    h1 {
+      font-size: 1.5em;
+      color: black;
+    }
+  }
+
+  .header__logo {
+    width: 70px;
+    border-radius: 50%;
+  }
+
+  .primary__navigation {
+    gap: 3em;
+
+    a {
+      font-size: 1.1em;
+    }
+  }
+
+  .login__btn {
+    width: unset;
+    padding: 0.5em 3.5em;
+  }
+}
