@@ -24,6 +24,10 @@
   h1 {
     font-size: 0.8em;
     color: black;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 }
 

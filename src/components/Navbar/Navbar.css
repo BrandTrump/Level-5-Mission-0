@@ -25,6 +25,9 @@
   font-size: 0.8em;
   color: black;
 }
+.header__title h1:hover {
+  cursor: pointer;
+}
 
 .header__logo {
   width: 30px;
